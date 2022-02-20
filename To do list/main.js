@@ -23,6 +23,12 @@ for(let i = 1;i<tabs.length;i++){
 
 addButton.addEventListener("click", addTask); 
 taskInput.addEventListener("focus", function(){taskInput.value = ""})
+function enterkey() {
+	if (window.event.keyCode == 13) {
+    	addTask()
+        taskInput.value =" "
+    }
+}
 
 tabs.forEach((menu) => menu.addEventListener("click", (e) => horizontalIndicator(e)))
 
@@ -39,6 +45,7 @@ function addTask(){
         isComplete: false
     }
     taskList.push(task)
+    filterList.push(task)
     render();
 }
 
