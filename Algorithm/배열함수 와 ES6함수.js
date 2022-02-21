@@ -86,3 +86,15 @@ let data = names.every((item)=>{
 })
 console.log(data)
 
+//find 조건에맞는 아이템 제일 먼저 나온것 하나만 str으로 반환
+let data = names.find((item)=>{
+    return item.startsWith("L")
+})
+console.log(data)
+
+//findIndex 조건에맞는 아이템 제일 먼저 나온것이 리스트 몇번째 나오는지 반환
+let data = names.findIndex((item)=>{
+    return item.startsWith("L")
+})
+console.log(data)
+

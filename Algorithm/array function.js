@@ -58,7 +58,20 @@ let ifSome = names.some((item)=>{
 })
 console.log(ifSome)
 //성을 제외한 이름에 p를 포함한 사람이 있는가?(대소문자 상관 no)
-let ifSome = names.some((item)=>{
-    return item.includes("p" || "P")
-})
-console.log(ifSome)
+console.log(names.some((item)=>{
+    let splitName = item.split(' ')
+    splitName.pop()
+    return splitName.some(eachName=>eachName.toLocaleLowerCase().includes("p"))
+}))
+
+//every 문제
+//모두의 전체 이름의 길이가 20자 이상인가?
+console.log(names.every((item)=> item.length >= 20))
+//모두의 이름에 a 가 포함되어 있는가?
+console.log(names.every((item)=> item.includes('a')))
+
+//find 문제
+//전체 이름의 길이가 20자 이상인 사람을 찾으시오.
+console.log(names.find((item)=> item.length >= 20))
+//미들네임이 포함되어있는 사람을 찾으시오.(예-Steven Paul Jobs)
+console.log(names.find((item)=> item.split(" ").length >= 3))

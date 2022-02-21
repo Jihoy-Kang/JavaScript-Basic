@@ -171,3 +171,23 @@ function sumNumber() {
     const sum = (a,b) => a+b
     return sum(40, 10);
   }sum = (a,b) => a+b
+
+  //9. 다음함수를 화살표 함수로 바꾸시오
+function sumNumber() {
+    //여기를 바꾸시오
+    return addNumber(1)(2)(3);
+    function addNumber(a) {
+      return function (b) {
+        return function (c) {
+          return a + b + c;
+        };
+      };
+    }
+  } 
+
+
+  let addNumber = (a) => (b) => (c) => a+b+c;
+   console.log(sumNumber());
+
+
+
